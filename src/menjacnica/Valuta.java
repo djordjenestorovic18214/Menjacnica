@@ -4,37 +4,31 @@ import java.util.LinkedList;
 
 public class Valuta {
 	private String naziv;
-	private String kraciNaziv;
+	private String skraceniNaziv;
 	private LinkedList<Kurs> kursevi;
 	
 	public String getNaziv() {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
-		if(naziv == null || naziv.isEmpty())
-			throw new RuntimeException("Greska! Naziv mora biti unet!");
 		this.naziv = naziv;
 	}
-	public String getKraciNaziv() {
-		return kraciNaziv;
+	public String getSkraceniNaziv() {
+		return skraceniNaziv;
 	}
-	public void setKraciNaziv(String kraciNaziv) {
-		if(kraciNaziv == null || kraciNaziv.isEmpty())
-			throw new RuntimeException("Greska! Kraci naziv mora biti unet!");
-		this.kraciNaziv = kraciNaziv;
+	public void setSkraceniNaziv(String skraceniNaziv) {
+		this.skraceniNaziv = skraceniNaziv;
 	}
 	public LinkedList<Kurs> getKursevi() {
 		return kursevi;
 	}
 	public void setKursevi(LinkedList<Kurs> kursevi) {
-		if(kursevi == null)
-			throw new RuntimeException("Greska! Kursevi moraju biti uneti!");
 		this.kursevi = kursevi;
 	}
 	
 	@Override
 	public String toString() {
-		return "Naziv valute: " + naziv + " <" + kraciNaziv
+		return "Naziv valute: " + naziv + " <" + skraceniNaziv
 				+ "> Kursevi: " + kursevi;
 	}
 	@Override
@@ -44,7 +38,7 @@ public class Valuta {
 		result = prime * result + ((kursevi == null) ? 0 : kursevi.hashCode());
 		result = prime * result + ((naziv == null) ? 0 : naziv.hashCode());
 		result = prime * result
-				+ ((kraciNaziv == null) ? 0 : kraciNaziv.hashCode());
+				+ ((skraceniNaziv == null) ? 0 : skraceniNaziv.hashCode());
 		return result;
 	}
 	@Override
@@ -62,10 +56,10 @@ public class Valuta {
 				return false;
 		} else if (!naziv.equals(other.naziv))
 			return false;
-		if (kraciNaziv == null) {
-			if (other.kraciNaziv != null)
+		if (skraceniNaziv == null) {
+			if (other.skraceniNaziv != null)
 				return false;
-		} else if (!kraciNaziv.equals(other.kraciNaziv))
+		} else if (!skraceniNaziv.equals(other.skraceniNaziv))
 			return false;
 		return true;
 	}
