@@ -11,6 +11,8 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv == null || naziv.isEmpty())
+			throw new RuntimeException("Greska! Naziv mora biti unet!");
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
@@ -25,6 +27,8 @@ public class Valuta {
 		return kursevi;
 	}
 	public void setKursevi(LinkedList<Kurs> kursevi) {
+		if(kursevi == null)
+			throw new RuntimeException("Greska! Kursevi moraju biti uneti!");
 		this.kursevi = kursevi;
 	}
 	

@@ -12,18 +12,24 @@ public class Kurs {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
+		if(datum == null)
+			throw new RuntimeException("Greska! Datum mora biti unet!");
 		this.datum = datum;
 	}
 	public double getProdajniKurs() {
 		return prodajniKurs;
 	}
 	public void setProdajniKurs(double prodajniKurs) {
+		if(prodajniKurs <= 0)
+			throw new RuntimeException("Greska! Prodajni kurs mora biti veci od 0!");
 		this.prodajniKurs = prodajniKurs;
 	}
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
 	public void setKupovniKurs(double kupovniKurs) {
+		if(kupovniKurs <= 0)
+			throw new RuntimeException("Greska! Kupovni kurs mora biti veci od 0!");
 		this.kupovniKurs = kupovniKurs;
 	}
 	public double getSrednjiKurs() {
