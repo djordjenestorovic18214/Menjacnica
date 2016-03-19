@@ -21,7 +21,7 @@ public class Kurs {
 	}
 	public void setProdajniKurs(double prodajniKurs) {
 		if(prodajniKurs <= 0)
-			throw new RuntimeException("Greska! Prodajni kurs mora biti veci od nule!");
+			throw new RuntimeException("Greska! Prodajni kurs mora biti veci od 0!");
 		this.prodajniKurs = prodajniKurs;
 	}
 	public double getKupovniKurs() {
@@ -29,7 +29,7 @@ public class Kurs {
 	}
 	public void setKupovniKurs(double kupovniKurs) {
 		if(kupovniKurs <= 0)
-			throw new RuntimeException("Greska! Kupovni kurs mora biti veci od nule!");
+			throw new RuntimeException("Greska! Kupovni kurs mora biti veci od 0!");
 		this.kupovniKurs = kupovniKurs;
 	}
 	public double getSrednjiKurs() {
@@ -37,7 +37,7 @@ public class Kurs {
 	}
 	public void setSrednjiKurs(double srednjiKurs) {
 		if(srednjiKurs <= 0)
-			throw new RuntimeException("Greska! Srednji kurs mora biti veci od nule!");
+			throw new RuntimeException("Greska! Srednji kurs mora biti veci od 0!");
 		this.srednjiKurs = srednjiKurs;
 	}
 	
