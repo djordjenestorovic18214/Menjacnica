@@ -4,31 +4,37 @@ import java.util.LinkedList;
 
 public class Valuta {
 	private String naziv;
-	private String skraceniNaziv;
+	private String kraciNaziv;
 	private LinkedList<Kurs> kursevi;
 	
 	public String getNaziv() {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv == null || naziv.isEmpty())
+			throw new RuntimeException("Greska! Naziv mora biti unet!");
 		this.naziv = naziv;
 	}
-	public String getSkraceniNaziv() {
-		return skraceniNaziv;
+	public String getKraciNaziv() {
+		return kraciNaziv;
 	}
-	public void setSkraceniNaziv(String skraceniNaziv) {
-		this.skraceniNaziv = skraceniNaziv;
+	public void setKraciNaziv(String kraciNaziv) {
+		if(kraciNaziv == null || kraciNaziv.isEmpty())
+			throw new RuntimeException("Greska! Kraci naziv mora biti unet!");
+		this.kraciNaziv = kraciNaziv;
 	}
 	public LinkedList<Kurs> getKursevi() {
 		return kursevi;
 	}
 	public void setKursevi(LinkedList<Kurs> kursevi) {
+		if(kursevi == null || kursevi.isEmpty())
+			throw new RuntimeException("Greska! Kursevi moraju biti uneti!");
 		this.kursevi = kursevi;
 	}
 	
 	@Override
 	public String toString() {
-		return "Naziv valute: " + naziv + " <" + skraceniNaziv
+		return "Naziv valute: " + naziv + " <" + kraciNaziv
 				+ "> Kursevi: " + kursevi;
 	}
 	@Override
@@ -38,7 +44,7 @@ public class Valuta {
 		result = prime * result + ((kursevi == null) ? 0 : kursevi.hashCode());
 		result = prime * result + ((naziv == null) ? 0 : naziv.hashCode());
 		result = prime * result
-				+ ((skraceniNaziv == null) ? 0 : skraceniNaziv.hashCode());
+				+ ((kraciNaziv == null) ? 0 : kraciNaziv.hashCode());
 		return result;
 	}
 	@Override
@@ -56,10 +62,10 @@ public class Valuta {
 				return false;
 		} else if (!naziv.equals(other.naziv))
 			return false;
-		if (skraceniNaziv == null) {
-			if (other.skraceniNaziv != null)
+		if (kraciNaziv == null) {
+			if (other.kraciNaziv != null)
 				return false;
-		} else if (!skraceniNaziv.equals(other.skraceniNaziv))
+		} else if (!kraciNaziv.equals(other.kraciNaziv))
 			return false;
 		return true;
 	}
