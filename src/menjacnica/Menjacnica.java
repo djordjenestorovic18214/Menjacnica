@@ -6,7 +6,7 @@ import interfejs.MenjacnicaInterfejs;
 public class Menjacnica implements MenjacnicaInterfejs {
 
 	public void dodajKurs(Valuta valuta, Kurs kurs) {
-		valuta.getKursevi().add(0, kurs);
+		valuta.getKursevi().addFirst(kurs);
 	}
 
 	public void obrisiKurs(Valuta valuta, GregorianCalendar datum) {
